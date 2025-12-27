@@ -11,7 +11,7 @@ FROM FIRST WIREFRAME TO FINAL DEPLOYMENT`;
   const aboutText = `I’m Fenar — a full-stack developer who also thinks like a designer. I build modern websites and web apps that are clean, fast, and easy to maintain. I care about the stuff people notice (layout, flow, micro-interactions) and the stuff they don’t (structure, reliability, scalability).
 
 I currently work at DAD Concepts, building everything from custom React/Next.js projects to platform sites on WordPress, Framer, and Wix — depending on what the product actually needs. My approach is simple: understand the goal, design the experience, then engineer it properly.
-WHEN I’M NOT SHIPPING:
+WHEN I’M NOT SHIPPING:-
 ⚡ Refining UI systems and components so every screen feels consistent
 🎨 Designing in Figma — layouts, flows, and brand visuals that match the product
 🛠️ Fixing performance and polish on real projects (the unglamorous work that matters)`;
