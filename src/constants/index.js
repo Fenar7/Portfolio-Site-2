@@ -197,16 +197,16 @@ export const projects = [{
     {
         id: 9,
         name: "Berad",
-        description: "Custom WordPress website for Beyond Senses Architects, built in close collaboration with founder Nabeel to match the studio’s tone and portfolio needs. The site focuses on strong storytelling, clean typography, and a smooth project browsing experience — designed to build trust and present their work like a premium brand.",
-        href: "https://thebeyondsenses.com/",
+        description: "Designed and built the Berad website as a high-performance Next.js experience with a custom Figma UI/UX and smooth GSAP animations. The site communicates Berad’s vision around sustainable, tech-enabled home essentials — using clean layouts, motion, and responsive design to make the brand feel premium and future-focused.",
+        href: "https://berad.in/",
         image: "/assets/projects/berad.png",
         bgImage: "/assets/backgrounds/curtains.jpg",
         frameworks: [
-            { id: 1, name: "WordPress" },
-            { id: 2, name: "Custom Design" },
+            { id: 1, name: "Next.js" },
+            { id: 2, name: "Figma" },
             { id: 3, name: "UI/UX" },
-            { id: 4, name: "Responsive" },
-            { id: 5, name: "Portfolio CMS" },
+            { id: 4, name: "GSAP" },
+            { id: 5, name: "SCSS" },
         ],
     },
 ];
