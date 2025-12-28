@@ -21,7 +21,7 @@ const App = () => {
   }, [progress]);
 
   return (
-    <ReactLenis root className="relative w-screen min-h-screen overflow-x-auto">
+    <ReactLenis root className="relative w-screen min-h-screen overflow-x-hidden">
       {!isReady && (
         <div className="fixed left-0 top-0 z-[999] grid h-[100dvh] w-screen place-items-center bg-black text-white transition-opacity duration-700 font-light">
           <div className="flex w-full max-w-[280px] flex-col items-center px-6 text-center sm:max-w-[320px]">

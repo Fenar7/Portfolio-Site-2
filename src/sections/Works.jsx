@@ -129,16 +129,19 @@ const Works = () => {
             />
 
             {/* title */}
-            <div className="flex justify-between px-10 text-black transition-all duration-500 md:group-hover:px-12 md:group-hover:text-white">
-              <h2 className="lg:text-[32px] text-[26px] leading-none">
+            <div className="flex items-start justify-between gap-4 px-10 text-black transition-all duration-500 md:group-hover:px-12 md:group-hover:text-white">
+              <h2 className="min-w-0 flex-1 break-words text-[26px] leading-none lg:text-[32px]">
                 {project.name}
               </h2>
-              <Icon icon="lucide:arrow-up-right" className="md:size-6 size-5" />
+              <Icon
+                icon="lucide:arrow-up-right"
+                className="size-5 shrink-0 md:size-6"
+              />
             </div>
             {/* divider */}
             <div className="w-full h-0.5 bg-black/80" />
             {/* framework */}
-            <div className="flex px-10 text-xs leading-loose uppercase transtion-all duration-500 md:text-sm gap-x-5 md:group-hover:px-12">
+            <div className="flex flex-wrap gap-x-5 gap-y-2 px-10 text-xs leading-loose uppercase transtion-all duration-500 md:text-sm md:group-hover:px-12">
               {project.frameworks.map((framework) => (
                 <p
                   key={framework.id}
@@ -149,7 +152,7 @@ const Works = () => {
               ))}
             </div>
             {/* mobile preview image */}
-            <div className="relative flex items-center justify-center px-10 md:hidden h-[400px]">
+            <div className="relative flex items-center justify-center px-10 overflow-hidden md:hidden h-[400px]">
               <img
                 src={project.bgImage}
                 alt={`${project.name}-bg-image`}
