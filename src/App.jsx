@@ -23,15 +23,17 @@ const App = () => {
   return (
     <ReactLenis root className="relative w-screen min-h-screen overflow-x-auto">
       {!isReady && (
-        <div className="fixed inset-0 z-[999] flex flex-col items-center justify-center bg-black text-white transition-opacity duration-700 font-light">
-          <p className="mb-4 text-xl tracking-widest animate-pulse">
-            Loading {Math.floor(progress)}%
-          </p>
-          <div className="relative h-1 overflow-hidden rounded w-60 bg-white/20">
-            <div
-              className="absolute top-0 left-0 h-full transition-all duration-300 bg-white"
-              style={{ width: `${progress}%` }}
-            ></div>
+        <div className="fixed inset-0 z-[999] grid place-items-center bg-black text-white transition-opacity duration-700 font-light">
+          <div className="flex w-full max-w-[280px] flex-col items-center px-6 text-center sm:max-w-[320px]">
+            <p className="mb-4 text-base tracking-widest animate-pulse sm:text-xl">
+              Loading {Math.floor(progress)}%
+            </p>
+            <div className="relative h-1 w-full overflow-hidden rounded bg-white/20">
+              <div
+                className="absolute top-0 left-0 h-full transition-all duration-300 bg-white"
+                style={{ width: `${progress}%` }}
+              ></div>
+            </div>
           </div>
         </div>
       )}
