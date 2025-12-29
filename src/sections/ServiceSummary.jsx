@@ -38,26 +38,26 @@ const ServiceSummary = () => {
     return () => mm.revert();
   }, []);
   return (
-    <section className="mt-20 overflow-hidden font-light leading-snug text-center mb-42 contact-text-responsive">
+    <section className="mt-20 overflow-hidden px-10 font-light leading-snug text-left md:px-0 md:text-center mb-42 contact-text-responsive">
       <div id="title-service-1">
         <p>FULL-STACK</p>
       </div>
       <div
         id="title-service-2"
-        className="flex items-center justify-center gap-3 translate-x-0 md:translate-x-16"
+        className="flex flex-wrap items-center justify-start gap-x-3 gap-y-2 md:justify-center md:gap-3 translate-x-0 md:translate-x-16"
       >
         <p className="font-normal">WEBSITES — WEB APPS</p>
-        <div className="w-10 h-1 md:w-32 bg-gold" />
+        <div className="w-6 h-1 md:w-32 bg-gold" />
         <p>APIs</p>
       </div>
       <div
         id="title-service-3"
-        className="flex items-center justify-center gap-3 translate-x-0 md:-translate-x-48"
+        className="flex flex-wrap items-center justify-start gap-x-3 gap-y-2 md:justify-center md:gap-3 translate-x-0 md:-translate-x-48"
       >
         <p>UI/UX</p>
-        <div className="w-10 h-1 md:w-32 bg-gold" />
+        <div className="w-6 h-1 md:w-32 bg-gold" />
         <p className="italic">DESIGN</p>
-        <div className="w-10 h-1 md:w-32 bg-gold" />
+        <div className="w-6 h-1 md:w-32 bg-gold" />
         <p>DEPLOYMENT</p>
       </div>
       <div id="title-service-4" className="translate-x-0 md:translate-x-48">

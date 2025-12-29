@@ -180,18 +180,16 @@ export const projects = [{
         ],
     },
     {
-        id: 7,
+        id: 8,
         name: "Emiraaz UAE",
         description: "Custom WordPress website for Beyond Senses Architects, built in close collaboration with founder Nabeel to match the studio’s tone and portfolio needs. The site focuses on strong storytelling, clean typography, and a smooth project browsing experience — designed to build trust and present their work like a premium brand.",
-        href: "https://thebeyondsenses.com/",
-        image: "/assets/projects/beyond-senses.png",
+        href: "https://thebeyondsenses.com",
+        image: "/assets/projects/emiraaz.png",
         bgImage: "/assets/backgrounds/curtains.jpg",
         frameworks: [
-            { id: 1, name: "WordPress" },
+            { id: 1, name: "UI/UX" },
             { id: 2, name: "Custom Design" },
-            { id: 3, name: "UI/UX" },
-            { id: 4, name: "Responsive" },
-            { id: 5, name: "Portfolio CMS" },
+            { id: 3, name: "Figma" },
         ],
     },
     {
