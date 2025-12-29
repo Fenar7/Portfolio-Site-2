@@ -17,28 +17,37 @@ WHEN I’M NOT SHIPPING:-
 🛠️ Fixing performance and polish on real projects (the unglamorous work that matters)`;
   const imgRef = useRef(null);
   useGSAP(() => {
-    gsap.to("#about", {
-      scale: 0.95,
-      scrollTrigger: {
-        trigger: "#about",
-        start: "bottom 80%",
-        end: "bottom 20%",
-        scrub: true,
-        markers: false,
-      },
-      ease: "power1.inOut",
-    });
+    const mm = gsap.matchMedia();
+    mm.add("(min-width: 768px)", () => {
+      gsap.to("#about", {
+        scale: 0.95,
+        scrollTrigger: {
+          trigger: "#about",
+          start: "bottom 80%",
+          end: "bottom 20%",
+          scrub: true,
+          markers: false,
+        },
+        ease: "power1.inOut",
+      });
 
-    gsap.set(imgRef.current, {
-      clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
+      gsap.set(imgRef.current, {
+        clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
+      });
+      gsap.to(imgRef.current, {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        duration: 2,
+        ease: "power4.out",
+        scrollTrigger: { trigger: imgRef.current },
+      });
     });
-    gsap.to(imgRef.current, {
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      duration: 2,
-      ease: "power4.out",
-      scrollTrigger: { trigger: imgRef.current },
+    mm.add("(max-width: 767px)", () => {
+      gsap.set(imgRef.current, {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+      });
     });
-  });
+    return () => mm.revert();
+  }, []);
   return (
     <section id="about" className="min-h-screen bg-black rounded-b-4xl">
       <AnimatedHeaderSection

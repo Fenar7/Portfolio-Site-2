@@ -4,35 +4,39 @@ import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 const ServiceSummary = () => {
   useGSAP(() => {
-    gsap.to("#title-service-1", {
-      xPercent: 20,
-      scrollTrigger: {
-        target: "#title-service-1",
-        scrub: true,
-      },
+    const mm = gsap.matchMedia();
+    mm.add("(min-width: 768px)", () => {
+      gsap.to("#title-service-1", {
+        xPercent: 20,
+        scrollTrigger: {
+          target: "#title-service-1",
+          scrub: true,
+        },
+      });
+      gsap.to("#title-service-2", {
+        xPercent: -30,
+        scrollTrigger: {
+          target: "#title-service-2",
+          scrub: true,
+        },
+      });
+      gsap.to("#title-service-3", {
+        xPercent: 100,
+        scrollTrigger: {
+          target: "#title-service-3",
+          scrub: true,
+        },
+      });
+      gsap.to("#title-service-4", {
+        xPercent: -100,
+        scrollTrigger: {
+          target: "#title-service-4",
+          scrub: true,
+        },
+      });
     });
-    gsap.to("#title-service-2", {
-      xPercent: -30,
-      scrollTrigger: {
-        target: "#title-service-2",
-        scrub: true,
-      },
-    });
-    gsap.to("#title-service-3", {
-      xPercent: 100,
-      scrollTrigger: {
-        target: "#title-service-3",
-        scrub: true,
-      },
-    });
-    gsap.to("#title-service-4", {
-      xPercent: -100,
-      scrollTrigger: {
-        target: "#title-service-4",
-        scrub: true,
-      },
-    });
-  });
+    return () => mm.revert();
+  }, []);
   return (
     <section className="mt-20 overflow-hidden font-light leading-snug text-center mb-42 contact-text-responsive">
       <div id="title-service-1">
