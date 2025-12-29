@@ -9,10 +9,12 @@ import Works from "./sections/Works";
 import ContactSummary from "./sections/ContactSummary";
 import Contact from "./sections/Contact";
 import { useProgress } from "@react-three/drei";
+import { useMediaQuery } from "react-responsive";
 
 const App = () => {
   const { progress } = useProgress();
   const [isReady, setIsReady] = useState(false);
+  const isMobile = useMediaQuery({ maxWidth: 767 });
 
   useEffect(() => {
     if (progress === 100) {
@@ -20,8 +22,10 @@ const App = () => {
     }
   }, [progress]);
 
-  return (
-    <ReactLenis root className="relative w-screen min-h-screen overflow-x-hidden">
+  const wrapperClassName =
+    "relative w-screen min-h-screen overflow-x-hidden";
+  const content = (
+    <>
       {!isReady && (
         <div className="fixed left-0 top-0 z-[999] grid h-[100dvh] w-screen place-items-center bg-black text-white transition-opacity duration-700 font-light">
           <div className="flex w-full max-w-[280px] flex-col items-center px-6 text-center sm:max-w-[320px]">
@@ -51,6 +55,20 @@ const App = () => {
         <ContactSummary />
         <Contact />
       </div>
+    </>
+  );
+
+  if (isMobile) {
+    return <div className={wrapperClassName}>{content}</div>;
+  }
+
+  return (
+    <ReactLenis
+      root
+      className={wrapperClassName}
+      options={{ smoothWheel: true, smoothTouch: false }}
+    >
+      {content}
     </ReactLenis>
   );
 };
