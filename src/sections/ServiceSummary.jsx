@@ -44,7 +44,7 @@ const ServiceSummary = () => {
       </div>
       <div
         id="title-service-2"
-        className="flex items-center justify-center gap-3 translate-x-16"
+        className="flex items-center justify-center gap-3 translate-x-0 md:translate-x-16"
       >
         <p className="font-normal">WEBSITES — WEB APPS</p>
         <div className="w-10 h-1 md:w-32 bg-gold" />
@@ -52,7 +52,7 @@ const ServiceSummary = () => {
       </div>
       <div
         id="title-service-3"
-        className="flex items-center justify-center gap-3 -translate-x-48"
+        className="flex items-center justify-center gap-3 translate-x-0 md:-translate-x-48"
       >
         <p>UI/UX</p>
         <div className="w-10 h-1 md:w-32 bg-gold" />
@@ -60,7 +60,7 @@ const ServiceSummary = () => {
         <div className="w-10 h-1 md:w-32 bg-gold" />
         <p>DEPLOYMENT</p>
       </div>
-      <div id="title-service-4" className="translate-x-48">
+      <div id="title-service-4" className="translate-x-0 md:translate-x-48">
         <p>WHAT I DO</p>
       </div>
     </section>
