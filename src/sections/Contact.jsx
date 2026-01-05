@@ -15,17 +15,21 @@ const Contact = () => {
     "just imagin, I code",
   ];
   useGSAP(() => {
-    gsap.from(".social-link", {
-      y: 100,
-      opacity: 0,
-      delay: 0.5,
-      duration: 1,
-      stagger: 0.3,
-      ease: "back.out",
-      scrollTrigger: {
-        trigger: ".social-link",
-      },
+    const mm = gsap.matchMedia();
+    mm.add("(min-width: 768px)", () => {
+      gsap.from(".social-link", {
+        y: 100,
+        opacity: 0,
+        delay: 0.5,
+        duration: 1,
+        stagger: 0.3,
+        ease: "back.out",
+        scrollTrigger: {
+          trigger: ".social-link",
+        },
+      });
     });
+    return () => mm.revert();
   }, []);
   return (
     <section

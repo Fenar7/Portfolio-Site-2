@@ -19,26 +19,30 @@ const Works = () => {
   const moveY = useRef(null);
 
   useGSAP(() => {
-    moveX.current = gsap.quickTo(previewRef.current, "x", {
-      duration: 1.5,
-      ease: "power3.out",
-    });
-    moveY.current = gsap.quickTo(previewRef.current, "y", {
-      duration: 2,
-      ease: "power3.out",
-    });
+    const mm = gsap.matchMedia();
+    mm.add("(min-width: 768px)", () => {
+      moveX.current = gsap.quickTo(previewRef.current, "x", {
+        duration: 1.5,
+        ease: "power3.out",
+      });
+      moveY.current = gsap.quickTo(previewRef.current, "y", {
+        duration: 2,
+        ease: "power3.out",
+      });
 
-    gsap.from("#project", {
-      y: 100,
-      opacity: 0,
-      delay: 0.5,
-      duration: 1,
-      stagger: 0.3,
-      ease: "back.out",
-      scrollTrigger: {
-        trigger: "#project",
-      },
+      gsap.from("#project", {
+        y: 100,
+        opacity: 0,
+        delay: 0.5,
+        duration: 1,
+        stagger: 0.3,
+        ease: "back.out",
+        scrollTrigger: {
+          trigger: "#project",
+        },
+      });
     });
+    return () => mm.revert();
   }, []);
 
   const handleMouseEnter = (index) => {

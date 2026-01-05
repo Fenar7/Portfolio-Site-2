@@ -16,28 +16,32 @@ const AnimatedHeaderSection = ({
   const shouldSplitTitle = title.includes(" ");
   const titleParts = shouldSplitTitle ? title.split(" ") : [title];
   useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: withScrollTrigger
-        ? {
-            trigger: contextRef.current,
-          }
-        : undefined,
-    });
-    tl.from(contextRef.current, {
-      y: "50vh",
-      duration: 1,
-      ease: "circ.out",
-    });
-    tl.from(
-      headerRef.current,
-      {
-        opacity: 0,
-        y: "200",
+    const mm = gsap.matchMedia();
+    mm.add("(min-width: 768px)", () => {
+      const tl = gsap.timeline({
+        scrollTrigger: withScrollTrigger
+          ? {
+              trigger: contextRef.current,
+            }
+          : undefined,
+      });
+      tl.from(contextRef.current, {
+        y: "50vh",
         duration: 1,
         ease: "circ.out",
-      },
-      "<+0.2"
-    );
+      });
+      tl.from(
+        headerRef.current,
+        {
+          opacity: 0,
+          y: "200",
+          duration: 1,
+          ease: "circ.out",
+        },
+        "<+0.2"
+      );
+    });
+    return () => mm.revert();
   }, []);
   return (
     <div ref={contextRef}>
