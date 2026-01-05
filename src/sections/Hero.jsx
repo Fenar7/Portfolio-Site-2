@@ -11,7 +11,7 @@ SO YOUR BRAND FEELS TRUSTWORTHY`;
   return (
     <section id="home" className="flex flex-col justify-end min-h-screen">
       <AnimatedHeaderSection
-        subTitle={"404 No Bugs Found"}
+        // subTitle={"404 No Bugs Found"}
         title={"Fenar Khan"}
         text={text}
         textColor={"text-black"}
