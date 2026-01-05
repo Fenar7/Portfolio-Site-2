@@ -9,6 +9,7 @@ const AnimatedHeaderSection = ({
   text,
   textColor,
   withScrollTrigger = false,
+  cta,
 }) => {
   const contextRef = useRef(null);
   const headerRef = useRef(null);
@@ -68,6 +69,7 @@ const AnimatedHeaderSection = ({
             text={text}
             className={`font-light uppercase value-text-responsive ${textColor}`}
           />
+          {cta ? <div className="mt-6">{cta}</div> : null}
         </div>
       </div>
     </div>

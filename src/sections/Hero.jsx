@@ -3,6 +3,7 @@ import { Planet } from "../components/Planet";
 import { Environment, Float, Lightformer } from "@react-three/drei";
 import { useMediaQuery } from "react-responsive";
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
+import { Link } from "react-scroll";
 const Hero = () => {
   const isMobile = useMediaQuery({ maxWidth: 853 });
   const text = `I BUILD FAST, CLEAN WEBSITES AND APPS
@@ -15,6 +16,18 @@ SO YOUR BRAND FEELS TRUSTWORTHY`;
         title={"Fenar Khan"}
         text={text}
         textColor={"text-black"}
+        cta={
+          <Link
+            to="contact"
+            smooth
+            duration={1200}
+            offset={-10}
+            className="inline-flex w-full items-center justify-center gap-3 rounded-full border border-black/70 px-6 py-3 text-xs font-light uppercase tracking-[0.3em] text-black transition-colors duration-300 hover:bg-black hover:text-primary sm:w-auto"
+          >
+            Start Your Project
+            <span aria-hidden="true">→</span>
+          </Link>
+        }
       />
       <figure
         className="absolute inset-0 -z-50"
