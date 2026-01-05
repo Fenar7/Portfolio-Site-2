@@ -11,19 +11,23 @@ SO YOU SHIP FAST — AND SCALE WITHOUT CHAOS.`;
   const serviceRefs = useRef([]);
   const isDesktop = useMediaQuery({ minWidth: "48rem" }); //768px
   useGSAP(() => {
-    serviceRefs.current.forEach((el) => {
-      if (!el) return;
+    const mm = gsap.matchMedia();
+    mm.add("(min-width: 768px)", () => {
+      serviceRefs.current.forEach((el) => {
+        if (!el) return;
 
-      gsap.from(el, {
-        y: 200,
-        scrollTrigger: {
-          trigger: el,  
-          start: "top 80%",
-        },
-        duration: 1,
-        ease: "circ.out",
+        gsap.from(el, {
+          y: 200,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+          },
+          duration: 1,
+          ease: "circ.out",
+        });
       });
     });
+    return () => mm.revert();
   }, []);
   return (
     <section id="services" className="min-h-screen bg-black rounded-t-4xl">
